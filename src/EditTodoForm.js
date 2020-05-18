@@ -7,6 +7,7 @@ const EditTodoForm = ({ id, editTodo, task, toggleEditForm }) => {
 
 	return (
 		<form
+			style={{ mariginLeft: '1rem', width: '50%' }}
 			onSubmit={(e) => {
 				e.preventDefault();
 				editTodo(id, value);
@@ -18,6 +19,7 @@ const EditTodoForm = ({ id, editTodo, task, toggleEditForm }) => {
 				value={value}
 				onChange={handleChange}
 				fullWidth
+				autoFocus
 			/>
 		</form>
 	);
