@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import AppBar from '@material-ui/core/AppBar';
 import ToolBar from '@material-ui/core/Toolbar';
-// import Grid from '@material-ui/core/Grid';
+import Grid from '@material-ui/core/Grid';
 
 const TodoApp = () => {
 	const intialTodos = [
@@ -47,8 +47,12 @@ const TodoApp = () => {
 					<Typography color='inherit'> TODOS WITH HOOKS</Typography>
 				</ToolBar>
 			</AppBar>
-			<TodoForm addTodo={addTodo} />
-			<TodoList todos={todos} />
+			<Grid container justify='center'>
+				<Grid item xs={11} md={8} lg={4} style={{ marginTop: '1rem' }}>
+					<TodoForm addTodo={addTodo} />
+					<TodoList todos={todos} />
+				</Grid>
+			</Grid>
 		</Paper>
 	);
 };
