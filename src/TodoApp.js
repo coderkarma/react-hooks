@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import TodoForm from './TodoForm';
 import TodoList from './TodoList';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
@@ -26,6 +27,9 @@ const TodoApp = () => {
 	];
 	const [todos, setTodos] = useState(intialTodos);
 
+	const addTodo = (newTodoText) =>
+		setTodos([...todos, { id: 4, task: newTodoText, completed: false }]);
+
 	return (
 		<Paper
 			style={{
@@ -43,7 +47,7 @@ const TodoApp = () => {
 					<Typography color='inherit'> TODOS WITH HOOKS</Typography>
 				</ToolBar>
 			</AppBar>
-
+			<TodoForm addTodo={addTodo} />
 			<TodoList todos={todos} />
 		</Paper>
 	);
