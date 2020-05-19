@@ -20,6 +20,7 @@ const TodoForm = ({ addTodo }) => {
 					margin='normal'
 					label='Add New Todo'
 					fullWidth
+					required
 				/>
 			</form>
 		</Paper>
