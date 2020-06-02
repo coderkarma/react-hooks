@@ -4,7 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import { TodosContext } from './context/todos.context';
 
 const EditTodoForm = ({ id, task, toggleEditForm }) => {
-	const { editTodo } = useContext(TodosContext);
+	const { dispatch } = useContext(TodosContext);
 	const [value, handleChange, reset] = useInputState(task);
 
 	return (
@@ -12,7 +12,7 @@ const EditTodoForm = ({ id, task, toggleEditForm }) => {
 			style={{ mariginLeft: '1rem', width: '50%' }}
 			onSubmit={(e) => {
 				e.preventDefault();
-				editTodo(id, value);
+				dispatch({ type: 'EDIT', id: id, newTask: value });
 				reset();
 				toggleEditForm();
 			}}>
